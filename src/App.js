@@ -1,27 +1,25 @@
-import './App.css';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import Card1 from './Card1';
-import Card2 from './Card2';
-import Card3 from './Card3';
-import Header from './Header';
-import './Card.css';
+import './App.css';
+import cardsData from './CardData.js';
+import Card from './Card'; 
+import Header from './Header.js';
+
 
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <section class="pricing py-5">
-          <div class="container">
-            <div class="row">
-              <Card1/>
-             <Card2/>
-             <Card3/>   
-            </div>
+    <Header/>
+    <section class="pricing py-5">
+        <div class="container">
+          <div class="row">
+            {cardsData.map((object, index) => (
+            <Card key={index} Data ={object}/>
+            ))}
           </div>
-      </section>
- 
-  
-    </div>
+        </div>
+    </section>
+  </div>
   );
 }
 
